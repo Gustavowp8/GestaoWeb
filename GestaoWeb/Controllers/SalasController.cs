@@ -36,7 +36,7 @@ namespace GestaoWeb.Controllers
             }
 
             var sala = await _context.Sala
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.IdSala == id);
             if (sala == null)
             {
                 return NotFound();
@@ -90,7 +90,7 @@ namespace GestaoWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nome")] Sala sala)
         {
-            if (id != sala.Id)
+            if (id != sala.IdSala)
             {
                 return NotFound();
             }
@@ -104,7 +104,7 @@ namespace GestaoWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SalaExists(sala.Id))
+                    if (!SalaExists(sala.IdSala))
                     {
                         return NotFound();
                     }
@@ -127,7 +127,7 @@ namespace GestaoWeb.Controllers
             }
 
             var sala = await _context.Sala
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.IdSala == id);
             if (sala == null)
             {
                 return NotFound();
@@ -157,7 +157,7 @@ namespace GestaoWeb.Controllers
 
         private bool SalaExists(int id)
         {
-          return (_context.Sala?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Sala?.Any(e => e.IdSala == id)).GetValueOrDefault();
         }
     }
 }

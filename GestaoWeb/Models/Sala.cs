@@ -1,8 +1,11 @@
-﻿namespace GestaoWeb.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace GestaoWeb.Models
 {
     public class Sala
     {
-        public int Id { get; set; }
+        [Key]
+        public int IdSala { get; set; }
 
         public string Nome { get; set; }
     }

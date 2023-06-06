@@ -2,6 +2,7 @@
 using GestaoWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestaoWeb.Migrations
 {
     [DbContext(typeof(GestaoWebContext))]
-    partial class GestaoWebContextModelSnapshot : ModelSnapshot
+    [Migration("20230606194312_versaodois")]
+    partial class versaodois
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

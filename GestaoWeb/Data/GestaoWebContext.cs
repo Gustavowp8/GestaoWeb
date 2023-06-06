@@ -15,5 +15,7 @@ namespace GestaoWeb.Data
         }
 
         public DbSet<GestaoWeb.Models.Sala> Sala { get; set; } = default!;
+
+        public DbSet<GestaoWeb.Models.Cliente> Clientes { get; set; } = default!;
     }
 }

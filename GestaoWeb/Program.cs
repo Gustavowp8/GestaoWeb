@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using GestaoWeb.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var connection = builder.Configuration.GetConnectionString("GestaoWebContext");
